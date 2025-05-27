@@ -51,8 +51,9 @@ export default class AdvancedFilterPlugin extends Plugin {
 
 	public toggleStatusBarItem(force?: boolean) {
 		if (!this.__statusBarItemEl) return;
-		const visible = this.__statusBarItemEl.checkVisibility()
-		this.__statusBarItemEl.style.display = force ?? !visible ? 'block' : 'none';
+		const cls = 'advanced-filter-statusbar--hidden'
+		const hidden = this.__statusBarItemEl.classList.contains(cls)
+		this.__statusBarItemEl.classList.toggle(cls, force === undefined ? !hidden : !force);
 	}
 
 	public onunload() {
