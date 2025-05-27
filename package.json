@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-advanced-filter-plugin",
+	"name": "obsidian-smart-excluded-plugin",
 	"version": "0.1.0",
-	"description": "Obsidian plugin to filter notes per workspace, active note and more.",
+	"description": "Change Excluded files setting per workspace, active note and more.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

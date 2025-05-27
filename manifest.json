@@ -1,9 +1,9 @@
 {
-	"id": "advanced-filter",
-	"name": "Advanced Filter",
+	"id": "smart-excluded",
+	"name": "Smart Excluded",
 	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "Filter notes per workspace, active note and more.",
+	"description": "Change Excluded files setting per workspace, active note and more.",
 	"author": "vlwkaos",
 	"authorUrl": "https://github.com/vlwkaos",
 	"isDesktopOnly": false

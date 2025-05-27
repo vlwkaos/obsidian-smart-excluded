@@ -1,4 +1,4 @@
-# Obsidian Advanced Filter Plugin
+# Obsidian Smart Excluded Plugin
 
 This plugin provides a configuration to dynamically set `Files and links > Excluded files` option.
 
@@ -6,13 +6,13 @@ It is useful for users who want to manage all notes within a single vault for ma
 
 For example, during quick switch, if there is no result, obsidian core will expand search results to include excluded files path automatically. 
 
-By not managing separate set of filters with custom features, we do not have to re-implement well-defined core features.
+By not managing separate set of filters with custom features, we can leverage well-defined/maintained core features.
 
 In short, it provides a grey area between a fully separated vault and a workspace (which is layout-only).
 
 ## Features
 
-Currently, it only supports setting filters per workspace (using the Workspaces plugin), which addresses my primary need.
+Currently, it only supports setting `Excluded files` per workspace (using the Workspaces plugin), which addresses my primary need.
 
 <img width="778" alt="image" src="https://github.com/user-attachments/assets/ec65d7c4-bb43-4f20-9650-a4fd5223d567" />
 

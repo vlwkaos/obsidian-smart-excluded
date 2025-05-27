@@ -7,6 +7,6 @@ If your plugin does not need CSS, delete this file.
 
 */
 
-.advanced-filter-statusbar--hidden{
+.smart-excluded-statusbar--hidden{
 	display: none;
 }

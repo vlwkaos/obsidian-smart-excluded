@@ -1,10 +1,10 @@
 import { App, debounce, Notice, PluginSettingTab, Setting } from "obsidian";
-import AdvancedFilterPlugin from "./main";
+import SmartExcludedPlugin from "./main";
 
-export class AdvancedFilterSettingTab extends PluginSettingTab {
-	public plugin: AdvancedFilterPlugin;
+export class SmartExcludedSettingTab extends PluginSettingTab {
+	public plugin: SmartExcludedPlugin;
 
-	constructor(app: App, plugin: AdvancedFilterPlugin) {
+	constructor(app: App, plugin: SmartExcludedPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}

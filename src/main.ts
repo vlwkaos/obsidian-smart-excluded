@@ -1,18 +1,18 @@
 import { Notice, Plugin } from 'obsidian';
 import { WorkspacesPluginInstance } from 'obsidian-typings';
-import { AdvancedFilterSettingTab } from './AdvancedFilterSettingTab';
+import { SmartExcludedSettingTab } from './SmartExcludedSettingTab';
 
-interface AdvancedFilterSettings {
+interface SmartExcludedSettings {
 	workspaceExcludes: Record<string, (string | RegExp)[]>;
 	showWorkspaceNameInStatusBar?: boolean;
 }
 
-const DEFAULT_SETTINGS: AdvancedFilterSettings = {
+const DEFAULT_SETTINGS: SmartExcludedSettings = {
 	workspaceExcludes: {}
 }
 
-export default class AdvancedFilterPlugin extends Plugin {
-	public settings: AdvancedFilterSettings;
+export default class SmartExcludedPlugin extends Plugin {
+	public settings: SmartExcludedSettings;
 
 
 	private __previousActiveWorkspace: string | null = null;
@@ -24,7 +24,7 @@ export default class AdvancedFilterPlugin extends Plugin {
 
 		this.__statusBarItemEl = this.addStatusBarItem();
 
-		this.addSettingTab(new AdvancedFilterSettingTab(this.app, this));
+		this.addSettingTab(new SmartExcludedSettingTab(this.app, this));
 		// There is no exposed event for workspace change, so we use layout-change as a workaround
 		this.registerEvent(this.app.workspace.on('layout-change', () => {
 			const currentActiveWorkspace = this.getWorkspacesPlugin()?.activeWorkspace;
@@ -36,7 +36,7 @@ export default class AdvancedFilterPlugin extends Plugin {
 		}))
 
 		this.addCommand({
-			id: 'advanced-filter-disable',
+			id: 'smart-excluded-disable',
 			name: `${this.name}: Clear Excluded Files temporarily.`,
 			callback: () => {
 				this.setUserIgnoredFiltersByWorkspace('')
@@ -46,12 +46,12 @@ export default class AdvancedFilterPlugin extends Plugin {
 		this.toggleStatusBarItem(this.settings.showWorkspaceNameInStatusBar ?? false);
 	}
 	public get name() {
-		return 'Advanced Filter'
+		return 'Smart Excluded'
 	}
 
 	public toggleStatusBarItem(force?: boolean) {
 		if (!this.__statusBarItemEl) return;
-		const cls = 'advanced-filter-statusbar--hidden'
+		const cls = 'smart-excluded-statusbar--hidden'
 		const hidden = this.__statusBarItemEl.classList.contains(cls)
 		this.__statusBarItemEl.classList.toggle(cls, force === undefined ? !hidden : !force);
 	}
