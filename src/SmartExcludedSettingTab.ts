@@ -37,10 +37,8 @@ export class SmartExcludedSettingTab extends PluginSettingTab {
 
 
 		Object.keys(workspaces).forEach((workspace: string) => {
-			const section = containerEl.createEl('div', { cls: 'workspace-section' });
-			section.createEl('h3', { text: `Workspace: ${workspace}` });
-
-			new Setting(section)
+			new Setting(containerEl).setName(`Workspace: ${workspace}`).setHeading();
+			new Setting(containerEl)
 				.setName('Excluded files')
 				.setDesc('This will override the core "Files and links" excluded files setting for this workspace.')
 				.addTextArea(textarea => {
@@ -57,9 +55,8 @@ export class SmartExcludedSettingTab extends PluginSettingTab {
 				});
 		});
 
-		const section = containerEl.createEl('div');
-		section.createEl('h3', { text: 'Status bar' });
-		new Setting(section)
+		new Setting(containerEl).setName('Status bar').setHeading();
+		new Setting(containerEl)
 			.setName('Show active workspace in status bar')
 			.setDesc('This will show the active workspace in the status bar.')
 			.addToggle(toggle => {

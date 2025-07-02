@@ -37,7 +37,7 @@ export default class SmartExcludedPlugin extends Plugin {
 
 		this.addCommand({
 			id: 'smart-excluded-disable',
-			name: `${this.name}: Clear Excluded Files temporarily.`,
+			name: `${this.name}: Clear excluded files setting temporarily`,
 			callback: () => {
 				this.setUserIgnoredFiltersByWorkspace('')
 			}
@@ -46,7 +46,7 @@ export default class SmartExcludedPlugin extends Plugin {
 		this.toggleStatusBarItem(this.settings.showWorkspaceNameInStatusBar ?? false);
 	}
 	public get name() {
-		return 'Smart Excluded'
+		return 'Smart excluded'
 	}
 
 	public toggleStatusBarItem(force?: boolean) {
